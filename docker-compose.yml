@@ -1,6 +1,10 @@
-app:
+db:
+  image: postgres
+web:
   build: .
+  volumes:
+    - .:/app
   ports:
     - "4567:4567"
-  volumes:
-    - ./src:/app/src
+  links:
+    - db
