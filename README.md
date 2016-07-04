@@ -17,9 +17,8 @@ $ eval "$(docker-machine env default)"
 ## Run docker-sinatra
 
 ```
-$ docker pull ruby:2.3.1
 $ docker-compose up
-$ curl http://$(docker-machine ip default):4567/
+$ curl http://$(docker-machine ip):4567/
 ```
 
 ## Destroy Docker environment
