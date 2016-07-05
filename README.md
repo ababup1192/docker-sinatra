@@ -17,8 +17,13 @@ $ eval "$(docker-machine env default)"
 ## Run docker-sinatra
 
 ```
+$ docker-compose build
+# Please retype this command if the container occurs some error.
+$ docker-compose run web bundle exec rake db:migrate
 $ docker-compose up
-$ curl http://$(docker-machine ip):4567/
+$ curl -X POST -d '{"msg": "abc"}' http://$(docker-machine ip):4567/words
+$ curl -X POST -d '{"msg": "def"}' http://$(docker-machine ip):4567/words
+$ curl http://$(docker-machine ip):4567/words
 ```
 
 ## Destroy Docker environment
